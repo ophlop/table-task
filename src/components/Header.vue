@@ -2,7 +2,7 @@
     <header>
         <div class="container">
             <h1>Test Table</h1>
-            <a href="https://github.com/ophlop">
+            <a href="https://github.com/ophlop/table-task">
                 <img src="https://api.iconify.design/logos:github-icon.svg" alt="github logo" />
             </a>
         </div>

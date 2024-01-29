@@ -73,6 +73,10 @@ const returnFullTable = () => {
 </template>
 
 <style scoped>
+section {
+    margin-bottom: 30px;
+}
+
 table {
     table-layout: fixed;
     width: 100%;
