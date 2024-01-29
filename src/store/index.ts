@@ -30,26 +30,25 @@ export const store = createStore<State>({
             }
         },
         SEARCH_ROW(state, payload) {
-            console.log(payload.filter, payload.searchData)
+            console.log(payload.searchData);
 
+            const searchPattern = new RegExp(payload.searchData, 'i');
             switch (payload.filter) {
                 case 'Id':
                     state.tableData = data.filter(item => item.id === Number(payload.searchData))
-                    state.searchState = true
-                    break;
-                case 'Name':
-                    state.tableData = data.filter(item => item.name.toLowerCase() === payload.searchData.toLowerCase())
-                    state.searchState = true
-                    break;
-                case 'Description':
-                    state.tableData = data.filter(item => item.description.toLowerCase() === payload.searchData.toLowerCase())
-                    state.searchState = true
                     break;
                 case 'Date':
                     state.tableData = data.filter(item => item.date.slice(0, 10) === payload.searchData.replace(/Date/gi, ''))
-                    state.searchState = true
+                    break;
+                default:
+                    state.tableData = data.filter(item => {
+                        return Object.values(item).some(value => {
+                            return searchPattern.test(value.toString());
+                        });
+                    });
                     break;
             }
+            state.searchState = true;
         },
         RESET_TABLE(state) {
             state.tableData = data

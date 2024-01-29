@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, defineProps } from 'vue'
+import { ref, defineProps, watch } from 'vue'
 
 interface Props {
     modelValue: string | number;
@@ -13,6 +13,10 @@ interface Props {
 const props = defineProps<Props>()
 
 const modelValue = ref(props.modelValue);
+
+watch(() => props.modelValue, (newValue) => {
+    modelValue.value = newValue;
+});
 </script>
 
 <template>

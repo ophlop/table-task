@@ -5,8 +5,8 @@ import SelectUI from '../UI/SelectUI.vue'
 import { ref, computed } from 'vue'
 import { useStore } from 'vuex';
 
-const searchParam = ref<string>('Id');
-const dataInput = ref<string>('')
+const searchParam = ref<string>('Общий поиск');
+let dataInput = ref<string>('')
 const store = useStore()
 
 const disabledSubmit = computed(() => {
@@ -22,13 +22,15 @@ function formSubmit() {
         filter: searchParam.value,
         searchData: dataInput.value
     })
+    dataInput.value = ''
+    console.log(dataInput.value)
 }
 </script>
 
 <template>
     <form @submit.prevent="formSubmit">
         <SelectUI
-            :options="['Id', 'Name', 'Description', 'Date']"
+            :options="['Общий поиск', 'Id', 'Date']"
             :tabindex="1"
             v-model="searchParam"
             labelText="Выберете параметр поиска:"
@@ -39,7 +41,7 @@ function formSubmit() {
             id='search-parametr'
             :required="true"
             :disabled="false"
-            :labelText="'Введите ' + `${searchParam}` + ':'"
+            :labelText="`${searchParam === 'Общий поиск' ? 'Общий поиск по Name и Description' : `Поиск по ${searchParam}`}`"
         />
         <Button
             type="submit"
