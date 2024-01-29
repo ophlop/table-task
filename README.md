@@ -24,3 +24,5 @@ npm run dev
 <pre><code>
 npm run build
 </code></pre>
+
+<h2><a href='https://table-nopreset.web.app/' target='_blank'>Live DEMO HERE</a></h2>
