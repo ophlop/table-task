@@ -89,7 +89,7 @@ td:last-child {
     tr {
         margin-bottom: 10px;
         display: block;
-        border-bottom: 2px solid #ddd;
+        border-bottom: 2px solid #d1d1d1;
     }
 
     td {
@@ -98,7 +98,7 @@ td:last-child {
         height: 40px;
         padding-top: 10px;
         font-size: 13px;
-        border-bottom: 1px dotted #ccc;
+        border-bottom: 1px dotted #d1d1d1;
     }
 
     .td-head {

@@ -38,30 +38,32 @@ watch(() => modelValue, (newVal) => {
 </script>
 
 <template>
-    <h3>{{ labelText }}</h3>
-    <div class="custom-select" :tabindex="tabindex" @blur="handleBlur">
-      <div class="selected" :class="{ open: open }" @click="toggleDropdown">
-        {{ selected }}
-      </div>
-      <div class="items" :class="{ selectHide: !open }">
-        <div class="item" v-for="(option, i) of options" :key="i" @click="selectOption(option)">
-          {{ option }}
+    <div class="custom-select">
+        <h3 class="custom-select__label">{{ labelText }}</h3>
+        <div class="custom-select__wrapper" :tabindex="tabindex" @blur="handleBlur">
+        <div class="custom-select__selected" :class="{ open: open }" @click="toggleDropdown">
+            {{ selected }}
         </div>
-      </div>
+        <div class="custom-select__items" :class="{ selectHide: !open }">
+            <div class="custom-select__item" v-for="(option, i) of options" :key="i" @click="selectOption(option)">
+            {{ option }}
+            </div>
+        </div>
+        </div>
     </div>
 </template>
 
 
 
 <style scoped>
-h3 {
+.custom-select__label {
     font-size: 30px;
     font-weight: 600;
     color: #181818;
     margin-top: 0;
 }
 
-.custom-select {
+.custom-select__wrapper {
     position: relative;
     width: 100%;
     height: fit-content;
@@ -72,7 +74,7 @@ h3 {
     font-size: 22px;
 }
 
-.selected {
+.custom-select__selected {
     background-color: white;
     border-radius: 16px;
     border: 1px solid #d1d1d1;
@@ -86,12 +88,12 @@ h3 {
 }
 
 
-.selected.open {
+.custom-select__selected.open {
     border: 1px solid #181818;
     border-radius: 16px 16px 0px 0px;
 }
 
-.selected:after {
+.custom-select__selected:after {
     position: absolute;
     content: “”;
     top: 22px;
@@ -102,7 +104,7 @@ h3 {
     border-color: #d1d1d1 transparent transparent transparent;
 }
 
-.items {
+.custom-select__items {
     color: #181818;
     border-radius: 0px 0px 16px 16px;
     overflow: hidden;
@@ -115,14 +117,14 @@ h3 {
     right: 0;
 }
 
-.item {
+.custom-select__item {
     color: #181818;
     padding-left: 20px;
     cursor: pointer;
     user-select: none;
 }
 
-.item:hover {
+.custom-select__item:hover {
     background-color: #e3e3e3;
 }
 

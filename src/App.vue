@@ -7,9 +7,3 @@ import Table from './components/Table.vue'
   <Header />
   <Table />
 </template>
-
-<style scoped>
-.container {
-  padding-top: 50px
-}
-</style>

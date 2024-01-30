@@ -1,9 +1,3 @@
-<template>
-    <div class="notitfication">
-        <p>{{ text }}</p>
-    </div>
-</template>
-
 <script setup lang="ts">
 import { defineProps } from 'vue';
 
@@ -13,6 +7,12 @@ interface Props {
 
 defineProps<Props>()
 </script>
+
+<template>
+    <div class="notitfication">
+        <p class="notification__text">{{ text }}</p>
+    </div>
+</template>
 
 <style scoped>
 .notitfication {
@@ -30,7 +30,7 @@ defineProps<Props>()
     align-items: center;
 }
 
-.notitfication>p {
+.notification__text {
     margin: 0;
 }
 </style>

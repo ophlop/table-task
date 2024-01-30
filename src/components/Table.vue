@@ -37,9 +37,9 @@ const returnFullTable = () => {
 </script>
 
 <template>
-    <section id="table-view" class="container">
+    <section id="table-view" class="container table-container">
         <TableForm />
-        <div class="btn-wrapper">
+        <div class="table-container__btn-wrapper">
             <ButtonUI
                 v-if="isSearching === true"
                 type="button"
@@ -55,7 +55,7 @@ const returnFullTable = () => {
                 :disabled="false"
             />
         </div>
-        <table v-if="tableData.length !== 0">
+        <table v-if="tableData.length !== 0" class="table-view__table">
             <thead>
                 <TableRow
                     :data="tableHead"
@@ -79,18 +79,18 @@ const returnFullTable = () => {
 </template>
 
 <style scoped>
-section {
+.table-container {
     margin-bottom: 30px;
 }
 
-table {
+.table-view__table {
     table-layout: fixed;
     width: 100%;
     white-space: nowrap;
     border-collapse: collapse;
 }
 
-.btn-wrapper {
+.table-container__btn-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -98,11 +98,11 @@ table {
 }
 
 @media (max-width: 640px) {
-    table thead {
+    .table-view__table thead {
         display: none;
     }
 
-    .btn-wrapper {
+    .table-container__btn-wrapper {
         flex-direction: column;
         gap: unset;
     }
