@@ -2,8 +2,10 @@
 import TableForm from './TableForm.vue';
 import TableRow from '../UI/TableRowUI.vue';
 import ButtonUI from '../UI/ButtonUI.vue';
+import NotificationUI from '../UI/NotificationUI.vue';
 import { computed } from 'vue';
 import { useStore } from 'vuex';
+
 
 const store = useStore();
 
@@ -53,7 +55,7 @@ const returnFullTable = () => {
                 :disabled="false"
             />
         </div>
-        <table>
+        <table v-if="tableData.length !== 0">
             <thead>
                 <TableRow
                     :data="tableHead"
@@ -69,6 +71,10 @@ const returnFullTable = () => {
                 />
             </tbody>
         </table>
+        <NotificationUI
+            v-else
+            text="Поиск не дал результатов"
+        />        
     </section>
 </template>
 
