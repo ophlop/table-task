@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+dist
 dist-ssr
 *.local
 
@@ -23,15 +24,13 @@ dist-ssr
 *.sw?
 .firebase/hosting.ZGlzdA.cache
 dist/assets/index-5GjZ_WGZ.js
-dist/assets/index-O6BYs9Sa.css
 .gitignore
 dist/assets/index-O6BYs9Sa.css
-dist/assets/index-O6BYs9Sa.css
 dist/assets/index-zcp1vjrY.css
-dist/assets/index-O6BYs9Sa.css
-dist/assets/index-O6BYs9Sa.css
 dist/index.html
 dist/assets/index-nOu168Mh.css
 .gitignore
 dist/assets/index-Z6dG2UAt.js
 .gitignore
+.firebaserc
+firebase.json
