@@ -6,7 +6,6 @@ import NotificationUI from '../UI/NotificationUI.vue';
 import { computed } from 'vue';
 import { useStore } from 'vuex';
 
-
 const store = useStore();
 
 const tableData = computed(() => {

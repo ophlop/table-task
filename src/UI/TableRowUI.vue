@@ -28,7 +28,6 @@ const getClass = computed(() => {
         >
             {{ value }}
         </td>
-
     </tr>
 </template>
 

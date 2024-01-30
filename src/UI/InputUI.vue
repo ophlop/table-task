@@ -38,7 +38,6 @@ watch(() => props.modelValue, (newValue) => {
 .input-wrapper {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     gap: 30px;
     margin-bottom: 30px;
 }

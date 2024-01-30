@@ -23,7 +23,6 @@ function formSubmit() {
         searchData: dataInput.value
     })
     dataInput.value = ''
-    console.log(dataInput.value)
 }
 </script>
 

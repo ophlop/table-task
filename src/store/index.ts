@@ -30,8 +30,6 @@ export const store = createStore<State>({
             }
         },
         SEARCH_ROW(state, payload) {
-            console.log(payload.searchData);
-
             const searchPattern = new RegExp(payload.searchData, 'i');
             switch (payload.filter) {
                 case 'Id':

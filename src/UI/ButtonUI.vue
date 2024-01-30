@@ -22,8 +22,6 @@ defineProps<Props>()
         {{ textButton }}
     </button>
 </template>
-<!-- -->
-
 
 <style>
 .btn {
