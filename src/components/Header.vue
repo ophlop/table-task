@@ -19,7 +19,7 @@
     height: 70px;
     box-sizing: border-box;
     padding: 10px;
-
+    margin-bottom: 30px;
     background-color: #eee;
     display: flex;
     align-items: center;
